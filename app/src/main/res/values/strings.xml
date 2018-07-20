@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">المتجر الإلكتروني</string>
+    <string name="forget_password">هل نسيت كلمة المرور ؟</string>
+    <string name="password">كلمة المرور</string>
+    <string name="username">إسم المستخدم</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="create_new_account"><u>إنشاء حساب جديد</u></string>
+    <string name="current_account"><u>هل لديك حساب بالفعل ؟</u></string>
+    <string name="full_name">الإسم كامل</string>
+    <string name="create_account">إنشاء حساب</string>
+</resources>
