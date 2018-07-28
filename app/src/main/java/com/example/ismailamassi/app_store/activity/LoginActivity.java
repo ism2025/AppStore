@@ -3,6 +3,7 @@ package com.example.ismailamassi.app_store.activity;
 import com.example.ismailamassi.app_store.SystemControl.SystemControl;
 import com.example.ismailamassi.app_store.SystemControl.Users;
 import com.example.ismailamassi.app_store.R;
+import com.fourhcode.forhutils.FUtilsValidation;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -25,21 +26,22 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Button login_btn = (Button) findViewById(R.id.login_btn);
 
+
+        Button login_btn = findViewById(R.id.login_btn);
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                findUser();
+                Users tmp = findUser();
 
             }
         });
 
-        final TextView create_account = findViewById(R.id.create_account);
+        TextView create_account = findViewById(R.id.create_account);
         create_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, CreateAccountActivity.class);
+                Intent intent = new Intent(getApplicationContext(), CreateAccountActivity.class);
                 startActivity(intent);
             }
         });
@@ -47,22 +49,26 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public Users findUser() {
-        final EditText email_ed = findViewById(R.id.email_ed);
-        final EditText password_ed = findViewById(R.id.password_ed);
+        EditText email_ed = findViewById(R.id.email_ed);
+        EditText password_ed = findViewById(R.id.password_ed);
         Users tmp = null;
         for (Users user : SystemControl.users) {
-            if ((email_ed.getText().toString().equals(user.email) || email_ed.getText().toString().equals(user.username)) && password_ed.getText().toString().equals(user.password)) {
-                tmp = user;
-                break;
+            if (!FUtilsValidation.isEmpty(email_ed, "هذا الحقل مطلوب") && !FUtilsValidation.isEmpty(password_ed, "هذا الحقل مطلوب")) {
+                if ((email_ed.getText().toString().equals(user.email)
+                        || email_ed.getText().toString().equals(user.username))
+                        && password_ed.getText().toString().equals(user.password)) {
+                    tmp = user;
+                    break;
+                }
             }
         }
-        if (tmp != null) {
-            Toast toast = Toast.makeText(LoginActivity.this, "تم تسجيل الدخول بنجاح", Toast.LENGTH_SHORT);
-            toast.show();
+        if (tmp == null) {
+            Toast.makeText(LoginActivity.this, "خطأ في إسم المستخدم أو كلمة المرور", Toast.LENGTH_SHORT).show();
         } else {
-            Toast toast = Toast.makeText(LoginActivity.this, "خطأ في إسم المستخدم أو كلمة المرور", Toast.LENGTH_SHORT);
-            toast.show();
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
         }
+
         return tmp;
 
     }

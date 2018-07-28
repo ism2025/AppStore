@@ -15,4 +15,5 @@
     <string name="current_account"><u>هل لديك حساب بالفعل ؟</u></string>
     <string name="full_name">الإسم كامل</string>
     <string name="create_account">إنشاء حساب</string>
+    <string name="login">تسجيل الدخول</string>
 </resources>

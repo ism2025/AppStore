@@ -1,0 +1,153 @@
+package com.example.ismailamassi.app_store.helper;
+
+import android.support.v7.widget.RecyclerView;
+
+import com.example.ismailamassi.app_store.R;
+
+public class AppConstant {
+
+    public static final int GAME = 1;
+    public static final int APP = 2;
+    public static final int SONG = 3;
+    public static final int BOOK = 4;
+
+    public static final int[] app_type = {
+            AppConstant.GAME,
+            AppConstant.APP,
+            AppConstant.APP,
+            AppConstant.SONG,
+            AppConstant.BOOK,
+            AppConstant.GAME,
+            AppConstant.SONG,
+            AppConstant.BOOK,
+            AppConstant.GAME,
+            AppConstant.APP,
+            AppConstant.APP,
+            AppConstant.SONG,
+            AppConstant.BOOK,
+            AppConstant.GAME,
+            AppConstant.SONG,
+            AppConstant.BOOK,
+            AppConstant.GAME,
+            AppConstant.APP,
+            AppConstant.APP,
+            AppConstant.SONG,
+            AppConstant.BOOK,
+            AppConstant.GAME,
+            AppConstant.SONG,
+            AppConstant.BOOK,
+            AppConstant.GAME,
+            AppConstant.APP,
+            AppConstant.APP,
+            AppConstant.SONG,
+            AppConstant.BOOK,
+            AppConstant.GAME,
+            AppConstant.SONG,
+            AppConstant.BOOK
+    };
+
+    public static final int[] app_icons = {
+            R.drawable.ic_menu_share,
+            R.drawable.ic_perm_identity_black_24dp,
+            R.drawable.ic_picture_as_pdf_black_24dp,
+            R.drawable.ic_menu_camera,
+            R.drawable.ic_mail_outline_black_24dp,
+            R.drawable.ic_menu_gallery,
+            R.drawable.ic_menu_manage,
+            R.drawable.ic_menu_send,
+            R.drawable.ic_menu_share,
+            R.drawable.ic_perm_identity_black_24dp,
+            R.drawable.ic_picture_as_pdf_black_24dp,
+            R.drawable.ic_menu_camera,
+            R.drawable.ic_mail_outline_black_24dp,
+            R.drawable.ic_menu_gallery,
+            R.drawable.ic_menu_manage,
+            R.drawable.ic_menu_send,
+            R.drawable.ic_menu_share,
+            R.drawable.ic_perm_identity_black_24dp,
+            R.drawable.ic_picture_as_pdf_black_24dp,
+            R.drawable.ic_menu_camera,
+            R.drawable.ic_mail_outline_black_24dp,
+            R.drawable.ic_menu_gallery,
+            R.drawable.ic_menu_manage,
+            R.drawable.ic_menu_send,
+            R.drawable.ic_menu_share,
+            R.drawable.ic_perm_identity_black_24dp,
+            R.drawable.ic_picture_as_pdf_black_24dp,
+            R.drawable.ic_menu_camera,
+            R.drawable.ic_mail_outline_black_24dp,
+            R.drawable.ic_menu_gallery,
+            R.drawable.ic_menu_manage,
+            R.drawable.ic_menu_send
+    };
+
+    public static final float[] app_rating = {
+            3.4f,
+            4.4f,
+            3.5f,
+            4.4f,
+            5f,
+            2f,
+            1.5f,
+            1.0f,
+            3.4f,
+            4.4f,
+            3.5f,
+            4.4f,
+            5f,
+            2f,
+            1.5f,
+            1.0f ,
+            3.4f,
+            4.4f,
+            3.5f,
+            4.4f,
+            5f,
+            2f,
+            1.5f,
+            1.0f,
+            3.4f,
+            4.4f,
+            3.5f,
+            4.4f,
+            5f,
+            2f,
+            1.5f,
+            1.0f
+    };
+
+    public static final String[] app_title = {
+            "تطبيق 1",
+            "تطبيق 2",
+            "تطبيق 3",
+            "تطبيق 4",
+            "تطبيق 5",
+            "تطبيق 6",
+            "تطبيق 7",
+            "تطبيق 8",
+            "تطبيق 9",
+            "تطبيق 10",
+            "تطبيق 11",
+            "تطبيق 12",
+            "تطبيق 13",
+            "تطبيق 14",
+            "تطبيق 15",
+            "تطبيق 16",
+            "تطبيق 17",
+            "تطبيق 18",
+            "تطبيق 19",
+            "تطبيق 20",
+            "تطبيق 21",
+            "تطبيق 22",
+            "تطبيق 23",
+            "تطبيق 24",
+            "تطبيق 25",
+            "تطبيق 26",
+            "تطبيق 27",
+            "تطبيق 28",
+            "تطبيق 29",
+            "تطبيق 30",
+            "تطبيق 31",
+            "تطبيق 32"
+    };
+}

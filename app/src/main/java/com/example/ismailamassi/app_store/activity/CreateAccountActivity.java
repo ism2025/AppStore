@@ -12,6 +12,8 @@ import android.widget.Toast;
 import com.example.ismailamassi.app_store.R;
 import com.example.ismailamassi.app_store.SystemControl.SystemControl;
 import com.example.ismailamassi.app_store.SystemControl.Users;
+import com.fourhcode.forhutils.FUtilsValidation;
+import com.fourhcode.forhutils.Futils;
 
 
 public class CreateAccountActivity extends AppCompatActivity {
@@ -53,7 +55,7 @@ public class CreateAccountActivity extends AppCompatActivity {
 
         Users tmp = null;
         for (Users user : SystemControl.users) {
-            if ((email.equals(user.email) || username.equals(user.username))) {
+            if ((username_ed.getText().toString().equals(user.email) || username_ed.getText().toString().equals(user.username))) {
                 tmp = user;
                 Toast toast = Toast.makeText(CreateAccountActivity.this, "هذا المستخدم موجود مسبقاً", Toast.LENGTH_SHORT);
                 toast.show();
@@ -61,22 +63,17 @@ public class CreateAccountActivity extends AppCompatActivity {
             }
         }
         if (tmp == null) {
-            if (username.length() < 6) {
-                Toast toast = Toast.makeText(CreateAccountActivity.this, "يرجى إدخال إسم مستخدم صحيح", Toast.LENGTH_SHORT);
-                toast.show();
-            } else if ((email.contains("@") && !email.endsWith(".com") && email.length() >= 10)) {
-                Toast toast = Toast.makeText(CreateAccountActivity.this, "يرجى إدخال بريد إلكتروني صحيح", Toast.LENGTH_SHORT);
-                toast.show();
-            } else if (password.length() >= 6 && password.length() <= 32) {
-                Toast toast = Toast.makeText(CreateAccountActivity.this, "يرجى إدخال كلمة مرور صحيحة بين 6 و 32 خانة", Toast.LENGTH_SHORT);
-                toast.show();
-            } else {
+            if (!FUtilsValidation.isEmpty(username_ed, "هذا الحقل مطلوب")
+                    && !FUtilsValidation.isEmpty(email_ed, "هذا الحقل مطلوب")
+                    && !FUtilsValidation.isEmpty(password_ed, "هذاالحقل مطلوب")
+                    &&  FUtilsValidation.isValidEmail(email_ed, "يرجى إدخال بريد إلكتروني صالح")
+                    &&  FUtilsValidation.isLengthCorrect(username,6,32)
+                    &&  FUtilsValidation.isLengthCorrect(password,6,32)) {
                 Users user = new Users(username, email, password);
                 tmp = user;
-                Toast toast = Toast.makeText(CreateAccountActivity.this, "تم إنشاء الحساب بنجاح", Toast.LENGTH_SHORT);
-                toast.show();
+                Intent intent = new Intent(CreateAccountActivity.this, MainActivity.class);
+                startActivity(intent);
             }
-
         }
         return tmp;
     }

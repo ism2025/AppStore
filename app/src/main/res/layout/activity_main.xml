@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,120 +7,317 @@
     android:orientation="vertical"
     tools:context=".activity.MainActivity">
 
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp">
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorPrimary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_more_vert_white_24dp"
+                    android:contentDescription="TODO" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_search_black_24dp" />
+
+                <TextView
+                    style="@style/margin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_weight="5"
+                    android:paddingTop="8dp"
+                    android:text="المتجر"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+        </android.support.v7.widget.Toolbar>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="16dp"
-            android:layout_marginBottom="2dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:orientation="vertical"
+            android:padding="4dp">
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="80dp"
-                android:layout_marginTop="8dp"
-                android:contentDescription="00"
-                android:src="@drawable/ic_app_icon" />
-
-            <android.support.design.widget.TextInputLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:padding="2dp">
+                android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/username_ed"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/show_more_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="عرض المزيد"
+                    android:textAlignment="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/cat_title_tv"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:drawablePadding="8dp"
-                    android:drawableRight="@drawable/ic_perm_identity_black_24dp"
-                    android:hint="@string/full_name"
-                    android:inputType="textEmailAddress"
-                    android:padding="8dp"
-                    android:textAlignment="textStart"
-                    android:textSize="20sp" />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
+                    android:layout_weight="4"
+                    android:text="عنوان التصنيف" />
+            </LinearLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:padding="2dp">
+                app:cardElevation="4dp"
+                android:layout_marginBottom="16dp">
 
-                <EditText
-                    android:id="@+id/email_ed"
-                    android:layout_width="match_parent"
+            </android.support.v7.widget.RecyclerView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/show_more_tv1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="عرض المزيد"
+                    android:textAlignment="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/cat_title_tv1"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:drawablePadding="8dp"
-                    android:drawableRight="@drawable/ic_mail_outline_black_24dp"
-                    android:hint="@string/email"
-                    android:inputType="textEmailAddress"
-                    android:padding="8dp"
-                    android:textAlignment="textStart"
-                    android:textSize="20sp" />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
+                    android:layout_weight="4"
+                    android:text="عنوان التصنيف" />
+            </LinearLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:padding="2dp">
+                app:cardElevation="4dp"
+                android:layout_marginBottom="16dp">
 
-                <EditText
-                    android:id="@+id/password_ed"
-                    android:layout_width="match_parent"
+            </android.support.v7.widget.RecyclerView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/show_more_tv2"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="عرض المزيد"
+                    android:textAlignment="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/cat_title_tv2"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:drawablePadding="8dp"
-                    android:drawableRight="@drawable/ic_lock_outline_black_24dp"
-                    android:hint="@string/password"
-                    android:inputType="textPassword"
-                    android:padding="8dp"
-                    android:textAlignment="textStart"
-                    android:textSize="20sp" />
-            </android.support.design.widget.TextInputLayout>
-
-
-            <Button
-                android:id="@+id/create_account_btn"
-                style="?android:attr/borderlessButtonStyle"
+                    android:layout_weight="4"
+                    android:text="عنوان التصنيف" />
+            </LinearLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/btn_bg"
-                android:padding="4dp"
-                android:text="@string/create_account"
-                android:textColor="@color/colorPrimary"
-                android:textSize="24sp" />
+                app:cardElevation="4dp"
+                android:layout_marginBottom="16dp">
+
+            </android.support.v7.widget.RecyclerView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/show_more_tv3"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="عرض المزيد"
+                    android:textAlignment="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/cat_title_tv3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="عنوان التصنيف" />
+            </LinearLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="4dp"
+                android:layout_marginBottom="16dp">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <!---->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/show_more_tv4"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="عرض المزيد"
+                    android:textAlignment="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/cat_title_tv4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="عنوان التصنيف" />
+            </LinearLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="4dp"
+                android:layout_marginBottom="16dp">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/show_more_tv5"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="عرض المزيد"
+                    android:textAlignment="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/cat_title_tv5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="عنوان التصنيف" />
+            </LinearLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="4dp"
+                android:layout_marginBottom="16dp">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/show_more_tv6"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="عرض المزيد"
+                    android:textAlignment="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/cat_title_tv6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="عنوان التصنيف" />
+            </LinearLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="4dp"
+                android:layout_marginBottom="16dp">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/show_more_tv7"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="عرض المزيد"
+                    android:textAlignment="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/cat_title_tv7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="عنوان التصنيف" />
+            </LinearLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="4dp"
+                android:layout_marginBottom="16dp">
+
+            </android.support.v7.widget.RecyclerView>
 
 
         </LinearLayout>
 
+    </RelativeLayout>
 
-    </ScrollView>
-    <TextView
-        android:id="@+id/current_account"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:clickable="true"
-        android:focusable="true"
-        android:fontFamily="serif"
-        android:foreground="?attr/selectableItemBackgroundBorderless"
-        android:gravity="bottom|center"
-        android:paddingTop="8dp"
-        android:text="@string/current_account"
-        android:layout_marginTop="16dp"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="normal" />
-
-</LinearLayout>
+</ScrollView>

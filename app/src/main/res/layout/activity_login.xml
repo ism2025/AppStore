@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,14 +9,14 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="4dp">
+        android:layout_margin="4dp"
+        tools:ignore="UselessParent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_margin="16dp"
             android:layout_marginBottom="2dp"
-            android:layout_weight="1"
             android:orientation="vertical">
 
             <ImageView
@@ -26,7 +25,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="16dp"
                 android:layout_marginTop="8dp"
-                android:contentDescription="00"
+                android:contentDescription="@string/app_name"
                 android:src="@drawable/ic_app_icon" />
             <TextView
                 android:layout_width="wrap_content"
@@ -53,7 +52,8 @@
                     android:inputType="textEmailAddress"
                     android:padding="8dp"
                     android:textAlignment="textStart"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    tools:ignore="RtlHardcoded" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -72,12 +72,13 @@
                     android:hint="@string/password"
                     android:inputType="textPassword"
                     android:textAlignment="textStart"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    tools:ignore="RtlHardcoded" />
             </android.support.design.widget.TextInputLayout>
 
             <TextView
                 android:id="@+id/forget_pass_tv"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:clickable="true"
@@ -100,7 +101,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/btn_bg"
                 android:padding="4dp"
-                android:text="تسجيل الدخول"
+                android:text="@string/login"
                 android:textColor="@color/colorPrimary"
                 android:textSize="24sp" />
 
